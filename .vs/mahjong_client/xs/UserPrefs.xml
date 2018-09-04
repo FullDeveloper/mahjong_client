@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{F1C40EBF-C1BE-640E-F228-D20ED276A9A6}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Login_Panel_Event/LoginSystemScript.cs">
+    <Files>
+      <File FileName="Assets/Script/netManager/CustomSocket.cs" Line="14" Column="27" />
+      <File FileName="Assets/Script/netManager/StateObject.cs" Line="9" Column="1" />
+      <File FileName="Assets/Script/Login_Panel_Event/LoginSystemScript.cs" Line="22" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
