@@ -25,6 +25,14 @@ public class LoginSystemScript : MonoBehaviour
 
     public void login() {
         Debug.Log("set button onclick event.");
+
+        if(agreeProtocol.isOn){
+            
+        }else{
+            Debug.Log("请先同意协议！");
+            TipsManagerScript.getInstance().setTips("请先同意用户协议");
+        }
+
     }
 	
 	// Update is called once per frame
