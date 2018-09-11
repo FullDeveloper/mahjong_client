@@ -42,6 +42,47 @@ public class CustomSocket
         return _instance;
     }
 
+    public void sendMsg(ClientRequest client)
+    {
+        SendData(client.ToBytes());
+    }
+
+    /// <summary>
+    /// 发送数据
+    /// </summary>
+    private void SendData(byte[] data)
+    {
+
+        //MyDebug.Log ("send data"+data.ToString ());
+        try
+        {
+            if (networkStream != null)
+            {
+                networkStream.Write(data, 0, data.Length);
+            }
+            else
+            {
+                //	showMessageTip("服务器断开连接，请重新运行程序或稍后再试");
+                Debug.Log("22222222222222222222222222222");
+                isConnected = false;
+                //SocketEventHandle.getInstance().noticeDisConect();
+                //ReConnectScript.getInstance().ReConnectToServer(); 
+                //Connect();
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.Log(ex.ToString());
+            Debug.Log("33333333333333333333333333");
+            //	showMessageTip("服务器断开连接，请重新运行程序或稍后再试");
+            isConnected = false;
+            //SocketEventHandle.getInstance().noticeDisConect();
+            //ReConnectScript.getInstance().ReConnectToServer(); 
+            //Connect();
+        }
+
+    }
+
     /// <summary>
     /// Connect romote server.
     /// </summary>
