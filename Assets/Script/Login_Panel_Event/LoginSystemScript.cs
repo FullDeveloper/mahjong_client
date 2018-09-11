@@ -20,6 +20,9 @@ public class LoginSystemScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        CustomSocket.hasStartTimer = false;
+        // 开始连接服务端
+        CustomSocket.getInstance().Connect();
         versionText.text = "版本号：" + Application.version;
     }
 
@@ -30,7 +33,7 @@ public class LoginSystemScript : MonoBehaviour
             
         }else{
             Debug.Log("请先同意协议！");
-            TipsManagerScript.getInstance().setTips("请先同意用户协议");
+            // TipsManagerScript.getInstance().setTips("请先同意用户协议");
         }
 
     }

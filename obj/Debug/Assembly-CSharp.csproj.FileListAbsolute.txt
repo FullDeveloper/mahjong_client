@@ -1,0 +1,2 @@
+E:\mahjong_server\mahjong_client\mahjong_client\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+E:\mahjong_server\mahjong_client\mahjong_client\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
