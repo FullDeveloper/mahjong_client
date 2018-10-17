@@ -7,10 +7,14 @@ public class InitializationConfigScritp : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         TipsManagerScript.getInstance().parent = gameObject.transform;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+        ServiceErrorListener seriveError = new ServiceErrorListener();
+
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

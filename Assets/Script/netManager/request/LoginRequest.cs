@@ -11,10 +11,10 @@ public class LoginRequest : ClientRequest
             LoginVo loginvo = new LoginVo();
             Random random = new Random();
             string str = random.Next(100, 1000) + "for" + random.Next(2000, 5000);
-            loginvo.openId = "127";
+            loginvo.openId = "128";
             loginvo.nickName = "127";
             loginvo.headIcon = "imgicon";
-            loginvo.unionId = "127";
+            loginvo.unionId = "128";
             loginvo.province = "21sfsd";
             loginvo.city = "afafsdf";
             loginvo.sex = 1;

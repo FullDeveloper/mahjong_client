@@ -32,10 +32,10 @@ public class WechatOperateScript : MonoBehaviour {
             try
             {
 
-                loginvo.openId = "100100100";
+                loginvo.openId = "100100104";
                 loginvo.nickName = "测试";
                 loginvo.headIcon = "-";
-                loginvo.unionId = "10101010";
+                loginvo.unionId = "100100104";
                 loginvo.province = "浙江省";
                 loginvo.city = "杭州市";
                 string sex = "1";

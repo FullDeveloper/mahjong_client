@@ -12,12 +12,26 @@ public class GlobalDataScript
     public static GameObject homePanel;//主界面
     public static GameObject gamePlayPanel;//游戏界面
 
+
+
+    /**总局数**/
+    public static int totalTimes;
+
+    /**麻将剩余局数**/
+    public static int surplusTimes;
+
     public WechatOperateScript wechatOperate;
 
     public static LoginVo loginVo;//登录数据
-    
+
+    /**房间游戏规则信息**/
+    public static RoomCreateVo roomVo = new RoomCreateVo();
+
+
     /**登陆返回数据**/
     public static AvatarVO loginResponseData;
+    /**加入房间返回数据**/
+    public static RoomJoinResponseVo roomJoinResponseData;
 
     /// <summary>
 	/// 最顶层的容器

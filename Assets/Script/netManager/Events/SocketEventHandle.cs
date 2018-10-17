@@ -12,6 +12,21 @@ public class SocketEventHandle : MonoBehaviour
 
     public ServerCallBackEvent LoginCallBack;//登录回调
 
+    public ServerCallBackEvent CreateRoomCallBack;//创建房间回调
+
+    public ServerCallBackEvent StartGameNotice;//开始游戏通知
+
+    public ServerCallBackEvent gameReadyNotice;//准备游戏通知返回
+
+    public ServerCallBackEvent otherUserJointRoomCallBack; // 其他人加入房间
+
+    public ServerCallBackEvent JoinRoomCallBack;//加入房间回调
+
+    public ServerCallBackEvent serviceErrorNotice;//错误信息返回
+
+
+
+
 
     private bool isDisconnet = false;
 
@@ -54,6 +69,13 @@ public class SocketEventHandle : MonoBehaviour
     {
         switch (response.headCode)
         {
+            // 服务端错误提示
+            case APIS.ERROR_RESPONSE:
+                if (serviceErrorNotice != null)
+                {
+                    serviceErrorNotice(response);
+                }
+                break;
             // 登录成功服务器响应
             case APIS.LOGIN_RESPONSE:
                 if (LoginCallBack != null)
@@ -61,6 +83,35 @@ public class SocketEventHandle : MonoBehaviour
                     LoginCallBack(response);
                 }
                 break;
+            // 准备游戏服务器响应
+            case APIS.PrepareGame_MSG_RESPONSE:
+                if (gameReadyNotice != null)
+                {
+                    gameReadyNotice(response);
+                }
+                break;
+            // 创建房间响应
+            case APIS.CREATEROOM_RESPONSE:
+                if (CreateRoomCallBack != null)
+                {
+                    CreateRoomCallBack(response);
+                }
+                break;
+            // 其他人加入房间
+            case APIS.JOIN_ROOM_NOICE:
+                if (otherUserJointRoomCallBack != null)
+                {
+                    otherUserJointRoomCallBack(response);
+                }
+                break;
+            // 自己加入房间回调
+            case APIS.JOIN_ROOM_RESPONSE:
+                if (JoinRoomCallBack != null)
+                {
+                    JoinRoomCallBack(response);
+                }
+                break;
+
         }
     }
 

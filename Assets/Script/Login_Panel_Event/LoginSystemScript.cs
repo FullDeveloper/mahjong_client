@@ -1,4 +1,4 @@
-﻿using LitJson;
+﻿  using LitJson;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,8 +60,17 @@ public class LoginSystemScript : MonoBehaviour
         Debug.Log("对象接受-->" + JsonMapper.ToJson(GlobalDataScript.loginResponseData));
 
         // 加载游戏主界面 TODO
-
-
+        panelCreateDialog = Instantiate(Resources.Load("Prefab/Panel_Home")) as GameObject;
+        panelCreateDialog.transform.parent = GlobalDataScript.getInstance().canvsTransfrom;
+        // Vector3.one 将panel 中 Scale属性中的 X、Y、Z变成1
+        panelCreateDialog.transform.localScale = Vector3.one;
+        // Left  Top bottom right 归0
+        panelCreateDialog.GetComponent<RectTransform>().offsetMax = new Vector2(0f, 0f);
+        panelCreateDialog.GetComponent<RectTransform>().offsetMin = new Vector2(0f, 0f);
+        GlobalDataScript.homePanel = panelCreateDialog;
+        // removeListener();
+        Destroy(this);
+        Destroy(gameObject);
     }
 
     public void login() {

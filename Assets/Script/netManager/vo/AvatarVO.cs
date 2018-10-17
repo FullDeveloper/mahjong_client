@@ -5,8 +5,8 @@ public class AvatarVO
     public Account account;
 
     //public int cardIndex; 
-    public bool isOnLine;
-    public bool isReady;
+    public bool onLine;
+    public bool ready;
     public bool main;
     public int roomId;
     public int[] chupais;//出牌
@@ -22,8 +22,8 @@ public class AvatarVO
     public void resetData()
     {
         //	cardIndex = 0;
-        isOnLine = false;
-        isReady = false;
+        onLine = false;
+        ready = false;
         main = false;
         roomId = 0;
     }
